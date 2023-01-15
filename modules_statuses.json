@@ -1,4 +1,5 @@
 {
     "Admins": true,
-    "Users": true
+    "Users": true,
+    "Common": true
 }
