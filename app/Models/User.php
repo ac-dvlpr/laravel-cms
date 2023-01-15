@@ -15,13 +15,6 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    // private $role;
-
-    // public function __construct(Role $role)
-    // {
-    //     $this->role = $role;
-    // }
-
     protected $table = 'users';
 
     protected $fillable = [
