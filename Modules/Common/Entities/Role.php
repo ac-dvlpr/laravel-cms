@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
+    protected $table = 'roles';
+
     public $fillable = [
         'id',
         'role'
@@ -16,5 +18,10 @@ class Role extends Model
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function getName(): string
+    {
+        return $this->role;
     }
 }
