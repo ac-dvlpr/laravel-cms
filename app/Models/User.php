@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+// use Modules\Common\Entities\Role;
+use Modules\Common\Entities\Role as RoleModel;
+use Modules\Common\ValueObject\Role;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    protected $table = 'users';
+
     protected $fillable = [
         'name',
         'email',
@@ -42,4 +42,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getRoleId(): int
+    {
+        return $this->role_id;
+    }
+
+    public function hasRoleAdmin(): bool
+    {
+        if(RoleModel::select('role')->where('id', $this->getRoleId())->pluck('role')[0] === Role::admin()->getValue()) {
+            return true;
+        }
+
+        return false;
+    }
 }
