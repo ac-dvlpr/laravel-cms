@@ -18,7 +18,7 @@ class PostController extends Controller
         $this->postService = $postService;
     }
 
-    public function save(SavePostRequest $request)
+    public function save(SavePostRequest $request): void
     {
         $this->postService->savePost($request->dto());
     }

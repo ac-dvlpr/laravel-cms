@@ -16,7 +16,7 @@ class PostService
         $this->postsRepository = $postsRepository;
     }
 
-    public function savePost(PostDto $postDto)
+    public function savePost(PostDto $postDto): void
     {
         $this->postsRepository->createPost($postDto);
     }

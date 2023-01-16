@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Users\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -25,7 +27,7 @@ class SavePostRequest extends FormRequest
         return false;
     }
 
-    public function dto()
+    public function dto(): PostDto
     {
         return new PostDto(
             $this->user(),
