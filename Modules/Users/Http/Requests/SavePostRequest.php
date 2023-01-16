@@ -14,7 +14,7 @@ class SavePostRequest extends FormRequest
     {
         return [
             'title' => 'required|min:3|max:50',
-            'content' => 'required|min:3|max:50'
+            'content' => 'required|min:3|max:50000'
         ];
     }
 
