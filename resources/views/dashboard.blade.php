@@ -9,13 +9,20 @@
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <form method="post" action="{{route('post.save'/*, ['_token' => csrf_token() ]*/)}}">
+
+                    <form method="post" action="{{route('post.save')}}">
                         @csrf
-                        <textarea name="content" id="editor">
-                            <p>This is some sample content.</p>
-                        </textarea>
-                        <p><input type="submit" value="Submit"></p>
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" id="title" name="title" minlength="3" maxlength="50" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editor">Content</label>
+                            <textarea class="form-control" name="content" id="editor"></textarea>
+                        </div>
+                        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
                     </form>
+
                 </div>
             </div>
         </div>

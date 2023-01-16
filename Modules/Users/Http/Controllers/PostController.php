@@ -1,15 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Users\Http\Controllers;
 
 use Illuminate\Contracts\Support\Renderable;
-use Illuminate\Http\Request;
+use Modules\Users\Http\Requests\SavePostRequest;
 use Illuminate\Routing\Controller;
+use Modules\Users\Services\PostService;
 
 class PostController extends Controller
 {
-    public function save(Request $request)
+    private $postService;
+
+    public function __construct(PostService $postService)
     {
-        dd($request->input('content'));
+        $this->postService = $postService;
+    }
+
+    public function save(SavePostRequest $request): void
+    {
+        $this->postService->savePost($request->dto());
     }
 }
