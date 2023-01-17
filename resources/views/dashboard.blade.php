@@ -10,17 +10,19 @@
             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
 
-                    <form method="post" action="{{route('post.save')}}">
+                    <form method="post" action="{{ route('post.save') }}">
                         @csrf
                         <div class="form-group">
-                            <label for="title">Title</label>
+                            <label for="title">{{ __('user.add_post.title') }}</label>
                             <input type="text" class="form-control" id="title" name="title" minlength="3" maxlength="50" required>
                         </div>
                         <div class="form-group">
-                            <label for="editor">Content</label>
-                            <textarea class="form-control" name="content" id="editor"></textarea>
+                            <label for="editor">{{ __('user.add_post.content') }}</label>
+                            <textarea class="form-control" name="content" id="editor">
+                                <p>{{ __('user.add_post.example') }}</p>
+                            </textarea>
                         </div>
-                        <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" value="Submit" class="btn btn-primary">{{ __('user.add_post.submit') }}</button>
                     </form>
 
                 </div>
