@@ -24,6 +24,13 @@ return [
     'forgot' => [
         'help' => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
         'email' => 'Email password reset link'
+    ],
+    
+    'contact' => [
+        'contact' => 'Contact form',
+        'name_surname' => 'Name and surname',
+        'email' => 'Email address',
+        'message' => 'Message',
+        'send' => 'Send'
     ]
-
 ];

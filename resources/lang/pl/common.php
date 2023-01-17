@@ -24,5 +24,13 @@ return [
     'forgot' => [
         'help' => 'Zapomniałeś hasła? Nie ma problemu. Podaj swój adres email, a wyślemy Ci link do resetu hasła, który pozwoli Ci u stalić nowe.',
         'email' => 'Wyślij link resetujący hasło'
+    ],
+
+    'contact' => [
+        'contact' => 'Formularz kontaktowy',
+        'name_surname' => 'Imię i nazwisko',
+        'email' => 'Adres email',
+        'message' => 'Wiadomość',
+        'send' => 'Wyślij'
     ]
 ];

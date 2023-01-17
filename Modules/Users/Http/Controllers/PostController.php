@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Modules\Users\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
 use Modules\Users\Http\Requests\SavePostRequest;
 use Illuminate\Routing\Controller;
 use Modules\Users\Services\PostService;
