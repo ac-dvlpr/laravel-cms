@@ -7,7 +7,9 @@ namespace Modules\Common\ValueObject;
 class Language
 {
     private const POLISH = 'Polish';
+    private const PL = 'pl';
     private const ENGLISH = 'English';
+    private const EN = 'en';
 
     private string $value;
 
@@ -21,9 +23,19 @@ class Language
         return new self(self::POLISH);
     }
 
+    public static function pl(): self
+    {
+        return new self(self::PL);
+    }
+
     public static function english(): self
     {
         return new self(self::ENGLISH);
+    }
+
+    public static function en(): self
+    {
+        return new self(self::EN);
     }
 
     public function getValue(): string
