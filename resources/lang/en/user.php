@@ -8,6 +8,10 @@ return [
             'language' =>'Language',
             'polish' => 'Polish',
             'english' => 'English'
+        ],
+        'profile' => [
+            'profile' => 'Profile',
+            'logout' => 'Log out'
         ]
     ],
     'add_post' => [
