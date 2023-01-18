@@ -32,5 +32,12 @@ return [
         'email' => 'Email address',
         'message' => 'Message',
         'send' => 'Send'
+    ],
+
+    'alert' => [
+        'success' => 'Success!',
+        'contact-form' => [
+            'info' => "We have received your message. We'll contact you as soon as possible."
+        ]
     ]
 ];

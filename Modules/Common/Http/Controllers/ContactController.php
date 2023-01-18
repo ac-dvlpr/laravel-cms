@@ -28,6 +28,6 @@ class ContactController extends Controller
     {
         $this->contactService->sendContactForm($request->dto());
 
-        return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
+        return back()->with('success', __('common.alert.contact-form.info'));
     }
 }

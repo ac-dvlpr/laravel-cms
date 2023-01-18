@@ -33,7 +33,7 @@ class ContactFormRequest extends FormRequest
         return $this->message;
     }
 
-    public function dto()
+    public function dto(): ContactFormDto
     {
         return new ContactFormDto(
             $this->getName(),
