@@ -20,8 +20,10 @@ class Localization
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Session::has('applocale') && !$request->user()->hasRoleAdmin()) {
-            App::setLocale(Session::get('applocale'));
+        if($request->user() !== null) {
+            if(Session::has('applocale') && !$request->user()->hasRoleAdmin()) {
+                App::setLocale(Session::get('applocale'));
+            }
         }
 
         return $next($request);

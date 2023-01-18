@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use Modules\Users\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocaleController;
+use Modules\Common\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified', 'userRole'])->name('dashboard');
 
 Route::post('/post', [PostController::class, 'save'])->name('post.save');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.form');
+Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
