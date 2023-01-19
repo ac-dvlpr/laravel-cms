@@ -63,7 +63,7 @@
         <script>
             ClassicEditor
                 .create( document.querySelector( '#editor' ), {
-                    toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote' ],
+                    toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList' ],
                 } )
                 .catch( error => {
                     console.error( error );
