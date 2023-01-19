@@ -19,12 +19,8 @@ class UserRole
 
     public function handle(Request $request, Closure $next)
     {
-        // dd($request);
-        
         if ($request->user()->hasRoleAdmin()) {
-            // return response()->view('admin-dashboard');
             return $this->postController->showAllPosts();
-            
         }
 
         return $next($request);

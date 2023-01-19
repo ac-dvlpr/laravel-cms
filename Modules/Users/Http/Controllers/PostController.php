@@ -10,6 +10,7 @@ use Modules\Users\Services\PostService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Modules\Users\Http\Requests\ShowPostRequest;
+use Illuminate\Http\Response;
 
 class PostController extends Controller
 {
@@ -34,7 +35,7 @@ class PostController extends Controller
         return view('dashboard', ['posts' => $lastThreePosts]);
     }
 
-    public function showAllPosts()
+    public function showAllPosts(): Response
     {
         $posts = $this->postService->showAllPosts();
 
