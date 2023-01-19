@@ -38,6 +38,9 @@ return [
         'success' => 'Sukces!',
         'contact-form' => [
             'info' => 'Otrzymaliśmy Twoją wiadomość. Skontaktujemy się z Tobą jak najszybciej.'
+        ],
+        'dashboard' => [
+            'info' => 'Post dodano.'
         ]
     ]
 ];

@@ -7,6 +7,7 @@ namespace Modules\Users\Http\Controllers;
 use Modules\Users\Http\Requests\SavePostRequest;
 use Illuminate\Routing\Controller;
 use Modules\Users\Services\PostService;
+use Illuminate\Http\RedirectResponse;
 
 class PostController extends Controller
 {
@@ -17,8 +18,10 @@ class PostController extends Controller
         $this->postService = $postService;
     }
 
-    public function save(SavePostRequest $request): void
+    public function save(SavePostRequest $request): RedirectResponse
     {
         $this->postService->savePost($request->dto());
+
+        return back()->with('success', __('common.alert.dashboard.info'));
     }
 }
