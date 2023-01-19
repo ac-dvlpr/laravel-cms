@@ -25,6 +25,11 @@ class PostService
 
     public function showLastThreePosts(ShowPostDto $showPostDto): Collection
     {
-        return $this->postsRepository->getLastThreePosts($showPostDto);
+        return $this->postsRepository->getAllUserPosts($showPostDto)->limit(3)->get();
+    }
+
+    public function showAllPosts(): Collection
+    {
+        return $this->postsRepository->getAllPosts()->get();
     }
 }

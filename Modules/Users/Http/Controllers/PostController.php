@@ -33,4 +33,11 @@ class PostController extends Controller
 
         return view('dashboard', ['posts' => $lastThreePosts]);
     }
+
+    public function showAllPosts()
+    {
+        $posts = $this->postService->showAllPosts();
+
+        return response()->view('admin-dashboard', ['posts' => $posts]);
+    }
 }

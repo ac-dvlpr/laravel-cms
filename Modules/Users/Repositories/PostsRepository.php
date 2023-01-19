@@ -9,7 +9,7 @@ use Modules\Users\Http\Dto\PostDto;
 use Modules\Users\Http\Dto\ShowPostDto;
 use Illuminate\Support\Facades\DB;
 use Common\Exception\PostNotCreatedException;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Builder;
 
 class PostsRepository
 {
@@ -32,12 +32,16 @@ class PostsRepository
         }
     }
 
-    public function getLastThreePosts(ShowPostDto $showPostDto): Collection
+    public function getAllPosts(): Builder
+    {
+        return Post::query()
+            ->orderBy('created_at', 'desc');
+    }
+
+    public function getAllUserPosts(ShowPostDto $showPostDto): Builder
     {
         return Post::select('title', 'content')
             ->where('user_id', $showPostDto->getUser()->getId())
-            ->orderBy('created_at', 'desc')
-            ->limit(3)
-            ->get();
+            ->orderBy('created_at', 'desc');
     }
 }
