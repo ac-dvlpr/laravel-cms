@@ -36,6 +36,10 @@
                             <br>
 
                         @endforeach
+
+                        <div class="d-flex justify-content-center">
+                            {!! $posts->links() !!}
+                        </div>
                     @else
                         {{ __('user.posts.no_posts') }}
                     @endif

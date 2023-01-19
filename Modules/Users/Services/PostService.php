@@ -8,6 +8,7 @@ use Modules\Users\Repositories\PostsRepository;
 use Modules\Users\Http\Dto\PostDto;
 use Modules\Users\Http\Dto\ShowPostDto;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 class PostService
 {
@@ -28,8 +29,8 @@ class PostService
         return $this->postsRepository->getAllUserPosts($showPostDto)->limit(3)->get();
     }
 
-    public function showAllPosts(): Collection
+    public function showAllPosts(): LengthAwarePaginator
     {
-        return $this->postsRepository->getAllPosts()->get();
+        return $this->postsRepository->getAllPosts()->paginate(10);
     }
 }
