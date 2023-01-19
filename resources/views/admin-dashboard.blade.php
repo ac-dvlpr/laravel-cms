@@ -17,8 +17,17 @@
 
                             <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                                 <div class="p-6 bg-white border-b border-gray-200">
+                                    <table>
+                                        <tr>
+                                            <td> <small>{{ $post->name }}</small> </td>
+                                            <td> <small>{{$post->created_at }}</small> </td>
+                                        </tr>
+                                    </table>
+
                                     <h2>{{ $post->title }}</h2>
+
                                     <br>
+
                                     <div>
                                         {!! $post->content !!}
                                     </div>

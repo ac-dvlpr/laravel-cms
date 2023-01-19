@@ -34,7 +34,8 @@ class PostsRepository
 
     public function getAllPosts(): Builder
     {
-        return Post::query()
+        return Post::select('title', 'content', 'posts.created_at', 'name')
+            ->leftJoin('users', 'users.id', '=', 'posts.user_id')
             ->orderBy('created_at', 'desc');
     }
 
