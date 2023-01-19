@@ -22,9 +22,7 @@ use Modules\Common\Http\Controllers\ContactController;
 
 Route::get('/', [AuthenticatedSessionController::class, 'create'])->name('main.page');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified', 'userRole'])->name('dashboard');
+Route::get('/dashboard', [PostController::class, 'showLastThreePosts'])->middleware(['auth', 'verified', 'userRole'])->name('dashboard');
 
 Route::post('/post', [PostController::class, 'save'])->name('post.save');
 

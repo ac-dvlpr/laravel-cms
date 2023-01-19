@@ -8,6 +8,8 @@ use Modules\Users\Http\Requests\SavePostRequest;
 use Illuminate\Routing\Controller;
 use Modules\Users\Services\PostService;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
+use Modules\Users\Http\Requests\ShowPostRequest;
 
 class PostController extends Controller
 {
@@ -23,5 +25,12 @@ class PostController extends Controller
         $this->postService->savePost($request->dto());
 
         return back()->with('success', __('common.alert.dashboard.info'));
+    }
+
+    public function showLastThreePosts(ShowPostRequest $request): View
+    {
+        $lastThreePosts = $this->postService->showLastThreePosts($request->dto());
+
+        return view('dashboard', ['posts' => $lastThreePosts]);
     }
 }
