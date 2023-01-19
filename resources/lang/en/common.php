@@ -40,7 +40,7 @@ return [
             'info' => "We have received your message. We'll contact you as soon as possible."
         ],
         'dashboard' => [
-            'info' => 'Post dodano.'
+            'info' => 'Post added.'
         ]
     ]
 ];
